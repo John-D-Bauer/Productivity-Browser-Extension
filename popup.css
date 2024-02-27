@@ -1,0 +1,11 @@
+/* Style for checkbox container */
+#checkboxContainer {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Style for individual checkbox */
+  .checkboxLabel {
+    margin-bottom: 5px;
+  }
+  

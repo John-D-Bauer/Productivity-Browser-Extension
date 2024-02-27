@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=10.0">
-  <title>Checkbox Extension Popup</title>
-  <link rel="stylesheet" href="popup.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkbox Extension</title>
+    <link rel="stylesheet" type="text/css" href="popup.css">
+    <script src="popup.js"></script>
 </head>
+
 <body>
-  <div id="checkboxDiv">
-    <input type="text" id="labelInput" placeholder="Enter new task">
-    <button id="addCheckboxBtn">Add Task</button>
-  </div>
-  <p>Number of checkboxes: <span id="checkboxCount">0</span></p>
-  <script src="popup.js"></script>
+    <h1>Checkbox Extension</h1>
+    <div id="inputContainer">
+        <input type="text" id="labelInput" placeholder="Enter label text">
+        <button id="addCheckboxBtn">Add Checkbox</button>
+    </div>
+    <div id="checkboxContainer">
+        <!-- Checkboxes will be added dynamically here -->
+    </div>
+    <button id="deleteCheckedBtn">Delete Checked Checkboxes</button>
 </body>
+
 </html>

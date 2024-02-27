@@ -252,12 +252,12 @@ const generateSTYLES = () => {
   };
 
 
-const websites = ["youtube", "instagram", "mlsssoccer", "uslchampionship"];
+const websites = ["youtube", "instagram", "mlssoccer", "uslchampionship"];
 
 
 for (let i = 0; i < websites.length; i++) {
     if (window.location.hostname == "www." + websites[i] + ".com") {
         document.head.innerHTML = generateSTYLES();
-        document.body.innerHTML = generateHTML(websites[0].toUpperCase());
+        document.body.innerHTML = generateHTML(websites[i].toUpperCase());
     }
 }
