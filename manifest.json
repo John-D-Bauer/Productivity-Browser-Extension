@@ -1,22 +1,22 @@
 {
-    "manifest_version": 2,
-    "name": "Procrastination Extension",
-    "version": "1.0",
-    "description": "Adds three checkboxes to the extension popup.",
-    "permissions": ["<all_urls>"],
-    "content_scripts": [
-        {
-          "matches": ["<all_urls>"],
-          "js": ["Content.js"]
-        }
-    ],
-    "browser_action": {
-      "default_popup": "popup.html",
-      "default_icon": {
-        "16": "icon.png",
-        "48": "icon.png",
-        "128": "icon.png"
-      }
+  "manifest_version": 2,
+  "name": "Your Extension Name",
+  "version": "1.0",
+  "permissions": [
+    "activeTab"
+  ],
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
     }
-  }
-  
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}

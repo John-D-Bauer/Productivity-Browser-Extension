@@ -1,5 +1,5 @@
 const generateSTYLES = () => {
-    return `<style>@import url(https://fonts.googleapis.com/css?family=opensans:500);
+  return `<style>@import url(https://fonts.googleapis.com/css?family=opensans:500);
     body {
       background: #33cc99;
       color: #fff;
@@ -229,10 +229,10 @@ const generateSTYLES = () => {
       }
     }
      </style>`;
-  };
-  
-  const generateHTML = (pageName) => {
-    return `
+};
+
+const generateHTML = (pageName) => {
+  return `
      
      <div id="clouds">
         <div class="cloud x1"></div>
@@ -249,15 +249,27 @@ const generateSTYLES = () => {
         <div class='_2'>STUDYING > ${pageName}</div>
     </div>
      `;
-  };
+};
 
-
+// The websites we want to block
 const websites = ["youtube", "instagram", "mlssoccer", "uslchampionship"];
 
+// var checkboxNum = Number(localStorage.getItem("checkboxNum")); // Currently == 0, because 'checkboxNum' doesn't exist in local storage?
 
-for (let i = 0; i < websites.length; i++) {
-    if (window.location.hostname == "www." + websites[i] + ".com") {
+// Listen for messages from the popup script
+browser.runtime.onMessage.addListener(function (message) {
+  var checkboxNum = Number(message.num);
+
+  if (checkboxNum > 0) {
+    // Blocks each website
+    for (let i = 0; i < websites.length; i++) {
+      if (window.location.hostname == "www." + websites[i] + ".com") {
         document.head.innerHTML = generateSTYLES();
         document.body.innerHTML = generateHTML(websites[i].toUpperCase());
+      }
     }
-}
+  }
+  else {
+    location.reload();
+  }
+});
